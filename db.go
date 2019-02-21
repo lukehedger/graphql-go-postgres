@@ -19,7 +19,7 @@ const (
 	sslmode = "disable"
 )
 
-func OpenDB() (*sql.DB, error) {
+func OpenDB() (*DB, error) {
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
 		"dbname=%s sslmode=%s",
 		host, port, user, dbname, sslmode)
@@ -43,5 +43,5 @@ func OpenDB() (*sql.DB, error) {
 
 	fmt.Println("Successfully connected to db!")
 
-	return db, nil
+	return &DB{db}, nil
 }

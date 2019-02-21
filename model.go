@@ -4,6 +4,10 @@ import (
 	"database/sql"
 )
 
+type DB struct {
+	*sql.DB
+}
+
 type Resolver struct {
-	DB *sql.DB
+	DB *DB
 }
