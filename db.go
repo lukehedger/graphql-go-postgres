@@ -11,6 +11,10 @@ import (
 	_ "github.com/lib/pq"
 )
 
+type DB struct {
+	*sql.DB
+}
+
 const (
 	host    = "localhost"
 	port    = 5432
